@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>fenetre_revue</class>
+ <widget class="QDialog" name="fenetre_revue">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>569</width>
+    <height>386</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Revue</string>
+  </property>
+  <layout class="QFormLayout" name="formLayout_2">
+   <item row="3" column="0">
+    <layout class="QFormLayout" name="formLayout"/>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLineEdit" name="annee"/>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLineEdit" name="nb_page"/>
+   </item>
+   <item row="7" column="1">
+    <widget class="QLineEdit" name="collection"/>
+   </item>
+   <item row="8" column="1">
+    <widget class="QLineEdit" name="titre"/>
+   </item>
+   <item row="9" column="1">
+    <widget class="QLineEdit" name="resume"/>
+   </item>
+   <item row="10" column="1">
+    <widget class="QLineEdit" name="auteur"/>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Année</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Nombre de pages</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Collection</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Titre</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Résumé</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>Auteur</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="1">
+    <widget class="QLineEdit" name="editeur"/>
+   </item>
+   <item row="12" column="1">
+    <widget class="QLineEdit" name="nb_article"/>
+   </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Editeur</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="0">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Nombre d'articles</string>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="1">
+    <widget class="QPushButton" name="ok">
+     <property name="text">
+      <string>OK</string>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="1">
+    <widget class="QPushButton" name="retour">
+     <property name="text">
+      <string>Retour</string>
+     </property>
+    </widget>
+   </item>
+   <item row="17" column="1">
+    <widget class="QPushButton" name="quitter">
+     <property name="text">
+      <string>Quitter</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

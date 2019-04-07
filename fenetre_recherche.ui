@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>fenetre_recherche</class>
+ <widget class="QDialog" name="fenetre_recherche">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>661</width>
+    <height>335</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Recherche</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="barre_recherche"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QPushButton" name="retour">
+     <property name="text">
+      <string>Retour</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <layout class="QGridLayout" name="gridLayout"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Recherche:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QTextEdit" name="resultat"/>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="ok">
+     <property name="text">
+      <string>OK</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
