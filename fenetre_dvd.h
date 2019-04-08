@@ -16,6 +16,8 @@ public:
     explicit fenetre_DVD(QWidget *parent = nullptr);    
     ~fenetre_DVD();
     void get_texte();
+    void ajout_ok();
+    int nb_dvd1();
 
 public slots:
     void on_quitter_clicked();
@@ -26,6 +28,7 @@ private:
     Bibliotheque *bibliotheque1 = new Bibliotheque;
     Ui::fenetre_DVD *ui;
     QString buffer;
+    static int nb_dvd;
 };
 
 #endif // FENETRE_DVD_H

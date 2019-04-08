@@ -20,12 +20,15 @@ public slots:
     void on_quitter_clicked();
     void on_recherche_clicked();
     void on_afficher_clicked();
+    void on_retirer_clicked();
 
 private:
+    Ui::fenetre_client *ui;
     fenetre_recherche* frecherche = new fenetre_recherche;
     fenetre2* f2 = new fenetre2;
     Bibliotheque* biblio = new Bibliotheque;
-    Ui::fenetre_client *ui;
+    static int taille_bibliotheque;
+
 };
 
 #endif // FENETRE_CLIENT_H

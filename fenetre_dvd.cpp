@@ -1,6 +1,8 @@
 #include "fenetre_dvd.h"
 #include "ui_fenetre_dvd.h"
 
+int fenetre_DVD::nb_dvd = 0;
+
 fenetre_DVD::fenetre_DVD(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::fenetre_DVD)
@@ -92,6 +94,16 @@ void fenetre_DVD::get_texte()
     in << "; [nombre de pistes]:";
     in << ui->nbPiste->text();
     in << "\n\n";
-
+    ajout_ok();
     labaseRecherche.close();
+}
+
+void fenetre_DVD::ajout_ok()
+{
+    ++nb_dvd;
+}
+
+int fenetre_DVD::nb_dvd1()
+{
+    return nb_dvd;
 }

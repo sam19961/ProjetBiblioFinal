@@ -1,6 +1,8 @@
 #include "fenetre_video.h"
 #include "ui_fenetre_video.h"
 
+int fenetre_video::nb_video = 0;
+
 fenetre_video::fenetre_video(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::fenetre_video)
@@ -79,7 +81,17 @@ void fenetre_video::get_texte()
     in << "; [maison de prod]:";
     in << ui->maison->text();
     in << "\n\n";
-
+    ajout_ok();
     labaseRecherche.close();
+}
+
+void fenetre_video::ajout_ok()
+{
+    ++nb_video;
+}
+
+int fenetre_video::nb_video1()
+{
+    return nb_video;
 }
 

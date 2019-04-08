@@ -1,5 +1,7 @@
 #include "fenetre_livre.h"
-#include "ui_fenetre_livre.h"
+#include "ui_fenetre_livre.h" //open + nom du fichier
+
+int fenetre_livre::nb_livre = 0;
 
 fenetre_livre::fenetre_livre(QWidget *parent) :
     QDialog(parent),
@@ -31,7 +33,7 @@ void fenetre_livre::on_quitterlivre_clicked()
 
 void fenetre_livre::on_oklivre_clicked()
 {    
-    get_texte();
+    get_texte();   
     ui->titre->setText("");
     ui->collection->setText("");
     ui->resume->setText("");
@@ -92,9 +94,19 @@ void fenetre_livre::get_texte()
     in << ui->resume->text();
     in << "\n\n";
 
+    ajout_ok();
     labaseRecherche.close();
 
 }
 
+void fenetre_livre::ajout_ok()
+{
+    ++nb_livre;
+}
+
+int fenetre_livre::nb_livre1()
+{
+    return nb_livre;
+}
 
 

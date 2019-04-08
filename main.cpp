@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
     Livre l1("Albert Einstein",1916,220,"SBP","Relativity","un livre de science");
     Video v1(194, "James Cameron", "20th Century Fox", "Titanic");
     DVD d1(162, "James Cameron", "Dune Entertainment", "Avatar", 2, 1);
+    //int taille, QString auteur, format type, QString nom, QString chemin
     RessourceNum r1(123, "jean michel", PDF, "du lesa.txt", "C//ici/maybela/avoila");
     Livre l2("Stephen Hawking",1988,236,"Flammarion","Une brève histoire","un autre livre de science");
     Revue rev1("myke",2005,200,"hsbc","science et vie","une revue de science","le S",3);

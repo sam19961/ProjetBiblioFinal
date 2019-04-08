@@ -100,6 +100,17 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>annee</tabstop>
+  <tabstop>nb_pages</tabstop>
+  <tabstop>collection</tabstop>
+  <tabstop>titre</tabstop>
+  <tabstop>resume</tabstop>
+  <tabstop>auteur</tabstop>
+  <tabstop>oklivre</tabstop>
+  <tabstop>retourlivre</tabstop>
+  <tabstop>quitterlivre</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

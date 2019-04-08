@@ -30,9 +30,15 @@ public slots:
 
 private:    
     Ui::FenetrePrincipale *ui;
+    fenetre_livre* flivre = new fenetre_livre;
+    fenetre_revue* frevue = new fenetre_revue;
+    fenetre_DVD* fdvd = new fenetre_DVD;
+    fenetre_video* fvideo = new fenetre_video;
+    fenetreressource* fressource = new fenetreressource;
     Bibliotheque* biblio = new Bibliotheque;    
     fenetre_recherche* frecherche = new fenetre_recherche;
 
+    static int taille_bibliotheque;
     QString buffer;
 
 };

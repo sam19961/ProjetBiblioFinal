@@ -102,6 +102,16 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>nom</tabstop>
+  <tabstop>auteur</tabstop>
+  <tabstop>type</tabstop>
+  <tabstop>taille</tabstop>
+  <tabstop>chemin</tabstop>
+  <tabstop>ok</tabstop>
+  <tabstop>retour</tabstop>
+  <tabstop>quitter</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

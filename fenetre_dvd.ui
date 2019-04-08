@@ -104,6 +104,17 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>nom</tabstop>
+  <tabstop>auteur</tabstop>
+  <tabstop>duree</tabstop>
+  <tabstop>maison</tabstop>
+  <tabstop>nbPiste</tabstop>
+  <tabstop>iscd</tabstop>
+  <tabstop>ok</tabstop>
+  <tabstop>retour</tabstop>
+  <tabstop>quitter</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

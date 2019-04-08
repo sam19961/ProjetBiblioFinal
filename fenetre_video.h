@@ -16,6 +16,8 @@ public:
     explicit fenetre_video(QWidget *parent = nullptr);    
     ~fenetre_video();
     void get_texte();
+    void ajout_ok();
+    int nb_video1();
 
 
 public slots:
@@ -25,7 +27,8 @@ public slots:
 
 private:
     Bibliotheque *bibliotheque1 = new Bibliotheque;
-    Ui::fenetre_video *ui;    
+    Ui::fenetre_video *ui;
+    static int nb_video;
 };
 
 #endif // FENETRE_VIDEO_H

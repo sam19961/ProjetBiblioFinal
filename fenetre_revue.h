@@ -15,6 +15,8 @@ public:
     explicit fenetre_revue(QWidget *parent = nullptr);    
     ~fenetre_revue();
     void get_texte();
+    void ajout_ok();
+    int nb_revue1();
 
 public slots:
     void on_quitter_clicked();
@@ -23,7 +25,8 @@ public slots:
 
 private:
     Bibliotheque *bibliotheque1 = new Bibliotheque;
-    Ui::fenetre_revue *ui;    
+    Ui::fenetre_revue *ui;
+    static int nb_revue;
 };
 
 #endif // FENETRE_REVUE_H

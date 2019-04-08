@@ -16,6 +16,8 @@ public:
     explicit fenetreressource(QWidget *parent = nullptr);    
     ~fenetreressource();
     void get_texte();
+    void ajout_ok();
+    int nb_ressource1();
 
 public slots:
     void on_quitter_clicked();
@@ -26,6 +28,7 @@ private:
     Bibliotheque *bibliotheque1 = new Bibliotheque;
     Ui::fenetreressource *ui;
     QString buffer;
+    static int nb_ressource;
 };
 
 #endif // FENETRERESSOURCE_H

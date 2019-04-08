@@ -1,6 +1,8 @@
 #include "fenetreressource.h"
 #include "ui_fenetreressource.h"
 
+int fenetreressource::nb_ressource = 0;
+
 fenetreressource::fenetreressource(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::fenetreressource)
@@ -57,7 +59,7 @@ void fenetreressource::get_texte()
     while(!in.atEnd()){
         QString word = in.read(4);
 
-        if(word.contains("RES")){
+        if(word.contains("Res")){
             buffer_ressource = word.front().digitValue();
         }
         buffer1 = in.readLine();
@@ -83,9 +85,17 @@ void fenetreressource::get_texte()
     in << "; [format]:";
     in << ui->type->text();
     in << "\n\n";
-
+    ajout_ok();    
     labaseRecherche.close();
 
 }
 
+void fenetreressource::ajout_ok()
+{
+    ++nb_ressource;
+}
 
+int fenetreressource::nb_ressource1()
+{
+    return nb_ressource;
+}

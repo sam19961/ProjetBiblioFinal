@@ -1,6 +1,8 @@
 #include "fenetre_revue.h"
 #include "ui_fenetre_revue.h"
 
+int fenetre_revue::nb_revue = 0;
+
 fenetre_revue::fenetre_revue(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::fenetre_revue)
@@ -94,8 +96,18 @@ void fenetre_revue::get_texte()
     in << ";[nombre d'articles]:";
     in << ui->nb_article->text();
     in << "\n\n";
-
+    ajout_ok();
     labaseRecherche.close();
 }
 
+
+void fenetre_revue::ajout_ok()
+{
+    ++nb_revue;
+}
+
+int fenetre_revue::nb_revue1()
+{
+    return nb_revue;
+}
 

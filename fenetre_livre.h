@@ -16,6 +16,8 @@ public:
     explicit fenetre_livre(QWidget *parent = nullptr);
     ~fenetre_livre();
     void get_texte();
+    void ajout_ok();
+    int nb_livre1();
 
 public slots:
     void on_quitterlivre_clicked();
@@ -23,8 +25,9 @@ public slots:
     void on_retourlivre_clicked();
 
 private:    
-    Bibliotheque *bibliotheque1 = new Bibliotheque;
+    Bibliotheque *bibliotheque1 = new Bibliotheque;    
     Ui::fenetre_livre *ui;
+    static int nb_livre;
 
 };
 

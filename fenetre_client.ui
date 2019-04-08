@@ -6,32 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>455</width>
-    <height>140</height>
+    <width>562</width>
+    <height>337</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Client</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="0" column="0">
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QPushButton" name="afficher">
-       <property name="text">
-        <string>Afficher</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QPushButton" name="recherche">
-       <property name="text">
-        <string>Recherche</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
    <item row="1" column="0">
     <widget class="QPushButton" name="quitter">
      <property name="text">
@@ -39,8 +21,43 @@
      </property>
     </widget>
    </item>
+   <item row="0" column="0">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="0">
+      <widget class="QPushButton" name="recherche">
+       <property name="text">
+        <string>Recherche</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="afficher">
+       <property name="text">
+        <string>Afficher</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QPushButton" name="retirer">
+       <property name="text">
+        <string>Retirer</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QSpinBox" name="numero_retirer"/>
+     </item>
+    </layout>
+   </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>afficher</tabstop>
+  <tabstop>recherche</tabstop>
+  <tabstop>retirer</tabstop>
+  <tabstop>numero_retirer</tabstop>
+  <tabstop>quitter</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

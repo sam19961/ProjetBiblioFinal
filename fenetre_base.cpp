@@ -24,7 +24,7 @@ void fenetre_base::on_quitter_clicked()
 void fenetre_base::on_ok_clicked()
 {
     FenetrePrincipale *fprincipale = new FenetrePrincipale(biblio);
-    fenetre_client *fclient = new fenetre_client;
+    fenetre_client *fclient = new fenetre_client(biblio);
 
     if(ui->mdp->text() == "admin"){
         fprincipale->show();

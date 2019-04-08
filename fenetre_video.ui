@@ -80,6 +80,15 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>auteur</tabstop>
+  <tabstop>duree</tabstop>
+  <tabstop>maison</tabstop>
+  <tabstop>nom</tabstop>
+  <tabstop>ok</tabstop>
+  <tabstop>retour</tabstop>
+  <tabstop>quitter</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
