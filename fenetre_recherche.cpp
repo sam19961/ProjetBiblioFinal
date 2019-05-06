@@ -10,6 +10,7 @@ fenetre_recherche::fenetre_recherche(QWidget *parent) :
     QFile labase2("../../../../bibliotheque1/sauvegardeArmoire.txt");
     biblio_recherche->load(&labase2);
     biblio_recherche->Clear();
+    biblio_recherche->afficher_BaseDeDonnee();
 }
 
 
@@ -24,7 +25,7 @@ void fenetre_recherche::on_ok_clicked()
     QFile labase("../../../../bibliotheque1/base_de_donnee.txt");
     buffer = ui->barre_recherche->text();
     biblio_recherche->recherche(buffer, &labase);
-    biblio_recherche->sauvegarde_biblio(&labase);        
+    biblio_recherche->sauvegarde_base_de_donnee(&labase);
     ui->resultat->setText(biblio_recherche->information_biblio(&labase));
 }
 

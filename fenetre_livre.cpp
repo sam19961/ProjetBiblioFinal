@@ -7,9 +7,7 @@ fenetre_livre::fenetre_livre(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::fenetre_livre)
 {
-    ui->setupUi(this);
-    QObject::connect(ui->retourlivre, SIGNAL(clicked()), this, SLOT(close()));
-    QObject::connect(ui->oklivre, SIGNAL(clicked()), this, SLOT(close()));
+    ui->setupUi(this);        
 
 }
 
@@ -21,7 +19,16 @@ fenetre_livre::~fenetre_livre()
 
 void fenetre_livre::on_retourlivre_clicked()
 {
-    delete ui;
+
+    ui->titre->setText("");
+    ui->collection->setText("");
+    ui->resume->setText("");
+    ui->nb_pages->setText("");
+    ui->annee->setText("");
+    ui->auteur->setText("");
+    ui->fid->setText("");
+    this->close();
+    //delete ui;
 }
 
 
@@ -40,18 +47,20 @@ void fenetre_livre::on_oklivre_clicked()
     ui->nb_pages->setText("");
     ui->annee->setText("");
     ui->auteur->setText("");
+    ui->fid->setText("");
+    this->close();
 }
 
 void fenetre_livre::get_texte()
 {
 
     if(ui->collection->text() == 0 || ui->annee->text() == 0 || ui->nb_pages->text() == 0 || ui->titre->text() == 0
-            || ui->resume->text() == 0 || ui->auteur->text() == 0){
+            || ui->resume->text() == 0 || ui->auteur->text() == 0 || ui->fid->text() == 0){
         qCritical() << "erreur d'ajout d'un livre a cause d'un espace vide" << endl;
         return;
     }
 
-    QFile labaseRecherche("../../../../bibliotheque1/sauvegardeArmoire.txt");
+    QFile labaseRecherche(SAUVEGARDE);
     QString buffer1;
     int buffer_livre;
     QTextStream in(&labaseRecherche);
@@ -92,6 +101,8 @@ void fenetre_livre::get_texte()
     in << ui->collection->text();
     in << "; [resume]:";
     in << ui->resume->text();
+    in << "; [id]:";
+    in << ui->fid->text();
     in << "\n\n";
 
     ajout_ok();

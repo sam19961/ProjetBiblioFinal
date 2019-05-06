@@ -23,29 +23,36 @@
    </item>
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout">
-     <item row="1" column="0">
+     <item row="2" column="0">
       <widget class="QPushButton" name="recherche">
        <property name="text">
         <string>Recherche</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="0">
+     <item row="1" column="0">
       <widget class="QPushButton" name="afficher">
        <property name="text">
         <string>Afficher</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
+     <item row="4" column="0">
       <widget class="QPushButton" name="retirer">
        <property name="text">
         <string>Retirer</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
+     <item row="4" column="1">
       <widget class="QSpinBox" name="numero_retirer"/>
+     </item>
+     <item row="0" column="0" colspan="2">
+      <widget class="QLabel" name="image">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>

@@ -7,9 +7,7 @@ fenetreressource::fenetreressource(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::fenetreressource)
 {
-    ui->setupUi(this);
-    QObject::connect(ui->retour, SIGNAL(clicked()), this, SLOT(close()));
-    QObject::connect(ui->ok, SIGNAL(clicked()), this, SLOT(close()));
+    ui->setupUi(this);        
 }
 
 fenetreressource::~fenetreressource()
@@ -19,7 +17,13 @@ fenetreressource::~fenetreressource()
 
 void fenetreressource::on_retour_clicked()
 {
-    delete ui;
+    ui->type->setText("");
+    ui->nom->setText("");
+    ui->auteur->setText("");
+    ui->chemin->setText("");
+    ui->taille->setText("");
+    ui->fid->setText("");
+    this->close();
 }
 
 void fenetreressource::on_quitter_clicked()
@@ -36,18 +40,20 @@ void fenetreressource::on_ok_clicked()
     ui->auteur->setText("");
     ui->chemin->setText("");
     ui->taille->setText("");
+    ui->fid->setText("");
 
 }
 
 void fenetreressource::get_texte()
 {
 
-    if(ui->nom->text() == 0 || ui->taille->text() == 0 || ui->chemin->text() == 0 || ui->type->text() == 0 || ui->auteur->text() == 0){
+    if(ui->nom->text() == 0 || ui->taille->text() == 0 || ui->chemin->text() == 0 || ui->type->text() == 0
+            || ui->auteur->text() == 0 || ui->fid->text() == 0){
         qCritical() << "erreur ajout de ressource num espace vide" << endl;
         return;
     }
 
-    QFile labaseRecherche("../../../../bibliotheque1/sauvegardeArmoire.txt");
+    QFile labaseRecherche(SAUVEGARDE);
     QString buffer1;
     int buffer_ressource;
     QTextStream in(&labaseRecherche);
@@ -84,6 +90,8 @@ void fenetreressource::get_texte()
     in << ui->chemin->text();
     in << "; [format]:";
     in << ui->type->text();
+    in << "; [id]:";
+    in << ui->fid->text();
     in << "\n\n";
     ajout_ok();    
     labaseRecherche.close();

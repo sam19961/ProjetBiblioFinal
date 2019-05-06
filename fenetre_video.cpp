@@ -7,9 +7,7 @@ fenetre_video::fenetre_video(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::fenetre_video)
 {
-    ui->setupUi(this);
-    QObject::connect(ui->retour, SIGNAL(clicked()), this, SLOT(close()));
-    QObject::connect(ui->ok, SIGNAL(clicked()), this, SLOT(close()));
+    ui->setupUi(this);        
 }
 
 fenetre_video::~fenetre_video()
@@ -18,8 +16,13 @@ fenetre_video::~fenetre_video()
 }
 
 void fenetre_video::on_retour_clicked()
-{
-    delete ui;
+{    
+    ui->nom->setText("");
+    ui->maison->setText("");
+    ui->duree->setText("");
+    ui->auteur->setText("");
+    ui->fid->setText("");
+    this->close();
 }
 
 void fenetre_video::on_ok_clicked()
@@ -29,6 +32,8 @@ void fenetre_video::on_ok_clicked()
     ui->maison->setText("");
     ui->duree->setText("");
     ui->auteur->setText("");
+    ui->fid->setText("");
+    this->close();
 }
 
 void fenetre_video::on_quitter_clicked()
@@ -39,12 +44,12 @@ void fenetre_video::on_quitter_clicked()
 
 void fenetre_video::get_texte()
 {    
-    if(ui->nom->text() == 0 || ui->maison->text() == 0 || ui->auteur->text() == 0 || ui->duree->text() == 0){
+    if(ui->nom->text() == 0 || ui->maison->text() == 0 || ui->auteur->text() == 0 || ui->duree->text() == 0 || ui->fid->text() == 0){
         qCritical() << "erreur dans l'ajout d'une video espace vide" << endl;
         return;
     }
 
-    QFile labaseRecherche("../../../../bibliotheque1/sauvegardeArmoire.txt");
+    QFile labaseRecherche(SAUVEGARDE);
     QString buffer1;
     int buffer_video;
     QTextStream in(&labaseRecherche);
@@ -80,6 +85,8 @@ void fenetre_video::get_texte()
     in << ui->auteur->text();
     in << "; [maison de prod]:";
     in << ui->maison->text();
+    in << "; [id]:";
+    in << ui->fid->text();
     in << "\n\n";
     ajout_ok();
     labaseRecherche.close();

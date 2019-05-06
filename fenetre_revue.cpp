@@ -7,8 +7,7 @@ fenetre_revue::fenetre_revue(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::fenetre_revue)
 {
-    ui->setupUi(this);
-    QObject::connect(ui->retour, SIGNAL(clicked()), this, SLOT(close()));
+    ui->setupUi(this);    
     QObject::connect(ui->ok, SIGNAL(clicked()), this, SLOT(close()));
 }
 
@@ -19,7 +18,18 @@ fenetre_revue::~fenetre_revue()
 }
 void fenetre_revue::on_retour_clicked()
 {
-    delete ui;
+
+    ui->titre->setText("");
+    ui->collection->setText("");
+    ui->resume->setText("");
+    ui->nb_page->setText("");
+    ui->annee->setText("");
+    ui->editeur->setText("");
+    ui->auteur->setText("");
+    ui->nb_article->setText("");
+    ui->fid->setText("");
+    this->close();
+
 }
 
 void fenetre_revue::on_quitter_clicked()
@@ -39,18 +49,20 @@ void fenetre_revue::on_ok_clicked()
     ui->editeur->setText("");
     ui->auteur->setText("");
     ui->nb_article->setText("");
+    ui->fid->setText("");
+    this->close();
 }
 
 void fenetre_revue::get_texte()
 {    
     if(ui->collection->text() == 0 || ui->annee->text() == 0 || ui->nb_page->text() == 0 || ui->titre->text() == 0
-            || ui->resume->text() == 0 || ui->auteur == 0 || ui->editeur == 0 || ui->nb_article == 0){
+            || ui->resume->text() == 0 || ui->auteur == 0 || ui->editeur == 0 || ui->nb_article == 0 || ui->fid->text() == 0){
         qCritical() << "erreur dans l'ajout d'une revue espace vide" << endl;
         return;
     }
 
 
-    QFile labaseRecherche("../../../../bibliotheque1/sauvegardeArmoire.txt");
+    QFile labaseRecherche(SAUVEGARDE);
     QString buffer1;
     int buffer_revue;
     QTextStream in(&labaseRecherche);
@@ -95,6 +107,8 @@ void fenetre_revue::get_texte()
     in << ui->editeur->text();
     in << ";[nombre d'articles]:";
     in << ui->nb_article->text();
+    in << "; [id]:";
+    in << ui->fid->text();
     in << "\n\n";
     ajout_ok();
     labaseRecherche.close();

@@ -27,6 +27,9 @@ public slots:
     void on_save1_clicked();
     void on_retirer_clicked();
     void on_clear1_clicked();
+    void on_tri_clicked();
+    void on_afficher_load_clicked();
+    void on_chat_utilisateur_clicked();
 
 private:    
     Ui::FenetrePrincipale *ui;

@@ -7,9 +7,7 @@ fenetre_DVD::fenetre_DVD(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::fenetre_DVD)
 {    
-    ui->setupUi(this);
-    QObject::connect(ui->retour, SIGNAL(clicked()), this, SLOT(close()));
-    QObject::connect(ui->ok, SIGNAL(clicked()), this, SLOT(close()));
+    ui->setupUi(this);       
 }
 
 
@@ -20,7 +18,13 @@ fenetre_DVD::~fenetre_DVD()
 
 void fenetre_DVD::on_retour_clicked()
 {
-    delete ui;
+
+    ui->nom->setText("");
+    ui->maison->setText("");
+    ui->duree->setText("");
+    ui->auteur->setText("");
+    ui->fid->setText("");
+    this->close();
 }
 
 void fenetre_DVD::on_ok_clicked()
@@ -31,6 +35,8 @@ void fenetre_DVD::on_ok_clicked()
     ui->maison->setText("");
     ui->duree->setText("");
     ui->auteur->setText("");
+    ui->fid->setText("");
+    this->close();
 }
 
 void fenetre_DVD::on_quitter_clicked()
@@ -41,12 +47,12 @@ void fenetre_DVD::on_quitter_clicked()
 
 void fenetre_DVD::get_texte()
 {    
-    if(ui->nom->text() == 0 || ui->maison->text() == 0 || ui->auteur->text() == 0 || ui->duree->text() == 0 || ui->nbPiste == 0){
+    if(ui->nom->text() == 0 || ui->maison->text() == 0 || ui->auteur->text() == 0 || ui->duree->text() == 0 || ui->nbPiste->text() == 0 || ui->fid->text() == 0){
         qCritical() << "erreur dans l'ajout d'un DVD/CD espace vide" << endl;
         return;
     }
 
-    QFile labaseRecherche("../../../../bibliotheque1/sauvegardeArmoire.txt");
+    QFile labaseRecherche(SAUVEGARDE);
     QString buffer1;
     int buffer_dvd, buffer_cd;
     QTextStream in(&labaseRecherche);
@@ -93,6 +99,8 @@ void fenetre_DVD::get_texte()
     in << ui->maison->text();
     in << "; [nombre de pistes]:";
     in << ui->nbPiste->text();
+    in << "; [id]:";
+    in << ui->fid->text();
     in << "\n\n";
     ajout_ok();
     labaseRecherche.close();

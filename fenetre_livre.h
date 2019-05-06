@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "../bibliotheque1/bibliotheque.h"
+#define SAUVEGARDE "../../../../bibliotheque1/sauvegardeArmoire.txt"
 
 namespace Ui {
 class fenetre_livre;
