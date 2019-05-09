@@ -3,7 +3,7 @@
 
 #include <QDialog>
 #include "fenetreressource.h"
-
+//fenetre d'affichage du QTextEdit (lorsqu'on appuie sur le bouton afficher)
 namespace Ui {
 class fenetre2;
 }
@@ -18,7 +18,7 @@ public:
     ~fenetre2();    
 
 public slots:
-    void on_retour2_clicked();
+    void on_retour2_clicked(); //on utilise les slots uniquement pour les click sur les QPushbutton dans ce projet
 private:
     Ui::fenetre2 *ui;
 };

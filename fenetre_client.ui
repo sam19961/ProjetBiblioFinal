@@ -14,19 +14,12 @@
    <string>Client</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="1" column="0">
-    <widget class="QPushButton" name="quitter">
-     <property name="text">
-      <string>Quitter</string>
-     </property>
-    </widget>
-   </item>
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout">
-     <item row="2" column="0">
-      <widget class="QPushButton" name="recherche">
+     <item row="0" column="0" colspan="2">
+      <widget class="QLabel" name="image">
        <property name="text">
-        <string>Recherche</string>
+        <string>TextLabel</string>
        </property>
       </widget>
      </item>
@@ -37,32 +30,49 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="0">
-      <widget class="QPushButton" name="retirer">
+     <item row="5" column="1">
+      <widget class="QSpinBox" name="numero_emprunter"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="recherche">
        <property name="text">
-        <string>Retirer</string>
+        <string>Recherche</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="1">
-      <widget class="QSpinBox" name="numero_retirer"/>
-     </item>
-     <item row="0" column="0" colspan="2">
-      <widget class="QLabel" name="image">
+     <item row="5" column="0">
+      <widget class="QPushButton" name="emprunter">
        <property name="text">
-        <string>TextLabel</string>
+        <string>Emprunter</string>
        </property>
       </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QPushButton" name="rendre">
+       <property name="text">
+        <string>Rendre</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QSpinBox" name="numero_rendre"/>
      </item>
     </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="quitter">
+     <property name="text">
+      <string>Quitter</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
  <tabstops>
   <tabstop>afficher</tabstop>
   <tabstop>recherche</tabstop>
-  <tabstop>retirer</tabstop>
-  <tabstop>numero_retirer</tabstop>
+  <tabstop>emprunter</tabstop>
+  <tabstop>numero_emprunter</tabstop>
   <tabstop>quitter</tabstop>
  </tabstops>
  <resources/>

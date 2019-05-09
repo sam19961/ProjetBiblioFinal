@@ -15,9 +15,9 @@ class fenetre_DVD : public QDialog
 public:
     explicit fenetre_DVD(QWidget *parent = nullptr);    
     ~fenetre_DVD();
-    void get_texte();
-    void ajout_ok();
-    int nb_dvd1();
+    void get_texte(); //récupère les informations lors de l'ajout d'un dvd
+    void ajout_ok(); //incrémente nb_dvd
+    int nb_dvd1(); //renvoie nb_dvd
 
 public slots:
     void on_quitter_clicked();
@@ -26,8 +26,7 @@ public slots:
 
 private:
     Bibliotheque *bibliotheque1 = new Bibliotheque;
-    Ui::fenetre_DVD *ui;
-    QString buffer;
+    Ui::fenetre_DVD *ui;    
     static int nb_dvd;
 };
 

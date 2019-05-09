@@ -4,6 +4,8 @@
 #include <QDialog>
 #include "../bibliotheque1/bibliotheque.h"
 #define SAUVEGARDE "../../../../bibliotheque1/sauvegardeArmoire.txt"
+//ce fichier txt permet la sauvegarde de la bibliothèque et nous l'utilisons pour l'affichage
+
 
 namespace Ui {
 class fenetre_livre;

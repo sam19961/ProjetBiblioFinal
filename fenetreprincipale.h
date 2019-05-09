@@ -15,7 +15,7 @@ public:
     explicit FenetrePrincipale(QWidget *parent = nullptr);
     explicit FenetrePrincipale(Bibliotheque *bibliotheque, QWidget *parent = nullptr);
     ~FenetrePrincipale();    
-    void afficher_bibliotheque();
+    void afficher_bibliotheque(); //affiche l'armoire contenant les objets
     void afficher_BaseDeDonnee();
 
 public slots:
@@ -32,6 +32,7 @@ public slots:
     void on_chat_utilisateur_clicked();
 
 private:    
+    //on créer toutes les fenetres provenants de la fenetre principale ici
     Ui::FenetrePrincipale *ui;
     fenetre_livre* flivre = new fenetre_livre;
     fenetre_revue* frevue = new fenetre_revue;

@@ -27,10 +27,12 @@ fenetre_client::fenetre_client(Bibliotheque* bibliotheque1, QWidget *parent) :
 
     biblio->egale(*bibliotheque1);
     taille_bibliotheque = biblio->taille_biblio();
-    ui->numero_retirer->setMinimum(1);
-    ui->numero_retirer->setMaximum(taille_bibliotheque);
+    ui->numero_emprunter->setMinimum(1);
+    ui->numero_emprunter->setMaximum(taille_bibliotheque);
+    ui->numero_rendre->setMinimum(1);
+    ui->numero_rendre->setMaximum(taille_bibliotheque);
 
-    qDebug() << taille_bibliotheque << endl;
+    qDebug() << taille_bibliotheque  << "fenetre_client.cpp" << endl;
 
     QFile labase(SAUVEGARDE);
     QFile *biblio_buffer;
@@ -48,11 +50,11 @@ void fenetre_client::on_recherche_clicked()
 }
 
 void fenetre_client::on_afficher_clicked()
-{
+{    
     QFile labaseRecherche(SAUVEGARDE);
     biblio->load(&labaseRecherche);        
     taille_bibliotheque = biblio->taille_biblio();
-    ui->numero_retirer->setMaximum(taille_bibliotheque);
+    ui->numero_emprunter->setMaximum(taille_bibliotheque);
     fenetre2* f2 = new fenetre2(biblio);
     f2->show();
 }
@@ -62,14 +64,19 @@ fenetre_client::~fenetre_client()
     delete ui;
 }
 
-void fenetre_client::on_retirer_clicked()
+void fenetre_client::on_emprunter_clicked()
 {
-    biblio->deleteId(ui->numero_retirer->value());
-    ui->numero_retirer->setMaximum(biblio->taille_biblio());
+    biblio->emprunter_objet(ui->numero_emprunter->value());
+    QFile labase(SAUVEGARDE);
+    QFile *biblio_buffer;
+    biblio_buffer = biblio->sauvegarde(&labase);        
+
+}
+
+void fenetre_client::on_rendre_clicked()
+{
+    biblio->rendre_objet(ui->numero_rendre->value());
     QFile labase(SAUVEGARDE);
     QFile *biblio_buffer;
     biblio_buffer = biblio->sauvegarde(&labase);
-    --taille_bibliotheque;
-    ui->numero_retirer->setMaximum(taille_bibliotheque);
-
 }

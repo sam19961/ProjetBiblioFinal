@@ -26,8 +26,7 @@ public slots:
 
 private:
     Bibliotheque *bibliotheque1 = new Bibliotheque;
-    Ui::fenetreressource *ui;
-    QString buffer;
+    Ui::fenetreressource *ui;    
     static int nb_ressource;
 };
 

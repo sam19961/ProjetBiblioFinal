@@ -47,6 +47,7 @@ void fenetre_DVD::on_quitter_clicked()
 
 void fenetre_DVD::get_texte()
 {    
+    //test qu'aucun champ ne soit vide
     if(ui->nom->text() == 0 || ui->maison->text() == 0 || ui->auteur->text() == 0 || ui->duree->text() == 0 || ui->nbPiste->text() == 0 || ui->fid->text() == 0){
         qCritical() << "erreur dans l'ajout d'un DVD/CD espace vide" << endl;
         return;

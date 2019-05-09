@@ -20,7 +20,8 @@ public slots:
     void on_quitter_clicked();
     void on_recherche_clicked();
     void on_afficher_clicked();
-    void on_retirer_clicked();
+    void on_emprunter_clicked();
+    void on_rendre_clicked();
 
 private:
     Ui::fenetre_client *ui;

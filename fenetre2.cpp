@@ -16,7 +16,6 @@ fenetre2::fenetre2(Bibliotheque *bibliotheque, QWidget *parent) :
     QString buffer;
     QFile labase(SAUVEGARDE);
     buffer = bibliotheque->information_armoire();
-    //buffer = bibliotheque->information_biblio(&labase);
     ui->textEdit->setReadOnly(1);
     ui->textEdit->setText(buffer);   
 }

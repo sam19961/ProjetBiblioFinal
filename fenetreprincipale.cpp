@@ -29,7 +29,7 @@ FenetrePrincipale::FenetrePrincipale(Bibliotheque *bibliotheque, QWidget *parent
     //initialisation de la biblotheque de la fenetre, de la taille de la bibliotheque et sauvegarde dans le fichier
     //sauvegardeArmoire.txt
     biblio->egale(*bibliotheque);
-    taille_bibliotheque = biblio->taille_biblio();// + 1;
+    taille_bibliotheque = biblio->taille_biblio();
     qDebug() << taille_bibliotheque << endl;
     ui->numero_retirer->setMinimum(1);
     ui->numero_retirer->setMaximum(taille_bibliotheque);
@@ -70,7 +70,7 @@ void FenetrePrincipale::on_afficher_clicked()
     biblio->affichage();
     biblio->sauvegarde(&labaseRecherche);
     fenetre2* f2 = new fenetre2(biblio);
-    taille_bibliotheque = biblio->taille_biblio();// +1;
+    taille_bibliotheque = biblio->taille_biblio();
     qDebug() << taille_bibliotheque << endl;
     ui->numero_retirer->setMaximum(taille_bibliotheque);    
     f2->show();    
