@@ -9,6 +9,15 @@ fenetre_revue::fenetre_revue(QWidget *parent) :
 {
     ui->setupUi(this);    
     QObject::connect(ui->ok, SIGNAL(clicked()), this, SLOT(close()));
+    ui->titre->setText("Le Monde");
+    ui->collection->setText("Niels");
+    ui->resume->setText("Un journal");
+    ui->nb_page->setText("230");
+    ui->annee->setText("2019");
+    ui->editeur->setText("edition Atlas");
+    ui->auteur->setText("Jerome");
+    ui->nb_article->setText("21");
+    ui->fid->setText("42");
 }
 
 

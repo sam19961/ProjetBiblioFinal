@@ -46,6 +46,12 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>barre_recherche</tabstop>
+  <tabstop>resultat</tabstop>
+  <tabstop>ok</tabstop>
+  <tabstop>retour</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

@@ -1,6 +1,5 @@
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
-
 int FenetrePrincipale::taille_bibliotheque = 0;
 
 FenetrePrincipale::FenetrePrincipale(QWidget *parent) :
@@ -26,11 +25,17 @@ FenetrePrincipale::FenetrePrincipale(Bibliotheque *bibliotheque, QWidget *parent
     this->setPalette(palette);
 
 
+    QDateTime dateTime = QDateTime::currentDateTime();
+    QString dateTimeString = dateTime.toString();
+    ui->Date_heure->setText("Date et Heure: " + dateTimeString);
+
+
     //initialisation de la biblotheque de la fenetre, de la taille de la bibliotheque et sauvegarde dans le fichier
     //sauvegardeArmoire.txt
     biblio->egale(*bibliotheque);
     taille_bibliotheque = biblio->taille_biblio();
     qDebug() << taille_bibliotheque << endl;
+    ui->lcdNombre->display(taille_bibliotheque);
     ui->numero_retirer->setMinimum(1);
     ui->numero_retirer->setMaximum(taille_bibliotheque);
     QFile labase(SAUVEGARDE);
@@ -42,7 +47,7 @@ FenetrePrincipale::FenetrePrincipale(Bibliotheque *bibliotheque, QWidget *parent
 FenetrePrincipale::~FenetrePrincipale()
 {
     delete ui;    
-    delete frecherche;
+    //delete frecherche;
     delete flivre;
     delete frevue;
     delete fdvd;
@@ -67,12 +72,13 @@ void FenetrePrincipale::on_afficher_clicked()
         biblio->doublon();
         --nb_exemple;
     }
-    biblio->affichage();
+    //biblio->affichage();
     biblio->sauvegarde(&labaseRecherche);
     fenetre2* f2 = new fenetre2(biblio);
     taille_bibliotheque = biblio->taille_biblio();
     qDebug() << taille_bibliotheque << endl;
-    ui->numero_retirer->setMaximum(taille_bibliotheque);    
+    ui->numero_retirer->setMaximum(taille_bibliotheque);
+    ui->lcdNombre->display(taille_bibliotheque);
     f2->show();    
 }
 
@@ -107,15 +113,9 @@ void FenetrePrincipale::on_retirer_clicked()
 
 }
 
-void FenetrePrincipale::on_clear1_clicked()
-{
-    //biblio->Clear();
-
-}
-
-
 void FenetrePrincipale::on_recherche_clicked()
 {
+    fenetre_recherche* frecherche = new fenetre_recherche;
     frecherche->show();
 }
 

@@ -25,7 +25,7 @@ public slots:
 
 private:
     Ui::fenetre_client *ui;
-    fenetre_recherche* frecherche = new fenetre_recherche;
+    //fenetre_recherche* frecherche = new fenetre_recherche;
     fenetre2* f2 = new fenetre2;
     Bibliotheque* biblio = new Bibliotheque;
     static int taille_bibliotheque;
