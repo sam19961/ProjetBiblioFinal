@@ -13,7 +13,7 @@ fenetre_base::fenetre_base(Bibliotheque *bibliotheque, QWidget *parent) :
     ui(new Ui::fenetre_base)
 {
     ui->setupUi(this);
-    //met l'image en fond (
+    //met l'image en fond
     ui->library->setPixmap(QPixmap("/Users/sam/Documents/projet_bibliotheque/library.png"));
 
     QPixmap bkgnd("/Users/sam/Documents/projet_bibliotheque/fond_base.jpg");
@@ -21,7 +21,7 @@ fenetre_base::fenetre_base(Bibliotheque *bibliotheque, QWidget *parent) :
     QPalette palette;
     palette.setBrush(QPalette::Background, bkgnd);
     this->setPalette(palette);
-    // )
+
 
     biblio->egale(*bibliotheque);
 }

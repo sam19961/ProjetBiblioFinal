@@ -41,8 +41,7 @@ int main(int argc, char *argv[])
     b1.ajouter(c3);
     b1.ajouter(v2);
     b1.ajouter(v3);
-    b1.ajouter(v4);
-    b1.affichage();
+    b1.ajouter(v4);    
 
     fenetre_base fbase(&b1);
     fenetre_base fbase1(&b1);

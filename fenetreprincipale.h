@@ -29,6 +29,7 @@ public slots:
     void on_tri_clicked();
     void on_afficher_load_clicked();
     void on_chat_utilisateur_clicked();
+    void on_server1_clicked();
 
 private:    
     //on créer toutes les fenetres provenants de la fenetre principale ici
@@ -39,6 +40,8 @@ private:
     fenetre_video* fvideo = new fenetre_video;
     fenetreressource* fressource = new fenetreressource;
     Bibliotheque* biblio = new Bibliotheque;    
+    Fenserveur* fserv = new Fenserveur;
+    clientside* fclientS = new clientside;
     //fenetre_recherche* frecherche = new fenetre_recherche;
 
     static int taille_bibliotheque;

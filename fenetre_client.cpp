@@ -34,11 +34,6 @@ fenetre_client::fenetre_client(Bibliotheque* bibliotheque1, QWidget *parent) :
 
     ui->lcdNombre->display(taille_bibliotheque);
 
-    qDebug() << taille_bibliotheque  << "fenetre_client.cpp" << endl;
-
-    /*QFile labase(SAUVEGARDE);
-    QFile *biblio_buffer;
-    biblio_buffer = biblio->sauvegarde(&labase);*/
 }
 
 void fenetre_client::on_quitter_clicked()
@@ -89,4 +84,9 @@ void fenetre_client::on_rendre_clicked()
     QFile labase(SAUVEGARDE);
     QFile *biblio_buffer;
     biblio_buffer = biblio->sauvegarde(&labase);
+}
+
+void fenetre_client::on_chat1_clicked()
+{
+    fclientS->show();
 }

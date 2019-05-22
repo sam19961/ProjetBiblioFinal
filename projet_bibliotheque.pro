@@ -1,6 +1,7 @@
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network
 
 TARGET = projet_bibliotheque
 TEMPLATE = app
@@ -20,6 +21,8 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
+        ../serveurside/fenserveur.cpp \
+        ../clientside/clientside.cpp \
         ../bibliotheque1/livre.cpp \
         ../bibliotheque1/revue.cpp \
         ../bibliotheque1/video.cpp \
@@ -40,6 +43,8 @@ SOURCES += \
 
 
 HEADERS += \
+        ../serveurside/fenserveur.h \
+        ../clientside/clientside.h \
         ../bibliotheque1/livre.h \
         ../bibliotheque1/revue.h \
         ../bibliotheque1/video.h \
@@ -59,6 +64,8 @@ HEADERS += \
 
 
 FORMS += \
+        ../serveurside/fenserveur.ui \
+        ../clientside/clientside.ui \
         fenetreprincipale.ui \
         fenetre2.ui \
         fenetre_livre.ui \

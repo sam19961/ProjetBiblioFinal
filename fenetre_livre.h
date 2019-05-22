@@ -1,10 +1,11 @@
-#ifndef FENETRE_LIVRE_H
+#ifndef FENETRE_LIVRE_H //evite les inclusions multiples
 #define FENETRE_LIVRE_H
 
 #include <QDialog>
+//erreurs possibles sur votre machine en fonction de l emplacement des fichiers
 #include "../bibliotheque1/bibliotheque.h"
 #define SAUVEGARDE "../../../../bibliotheque1/sauvegardeArmoire.txt"
-//ce fichier txt permet la sauvegarde de la bibliothèque et nous l'utilisons pour l'affichage
+//ce fichier txt permet la sauvegarde de la bibliotheque et nous l utilisons pour l affichage
 
 
 namespace Ui {

@@ -7,8 +7,14 @@ fenetre_livre::fenetre_livre(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::fenetre_livre)
 {
-    ui->setupUi(this);        
-
+    ui->setupUi(this);
+    ui->titre->setText("Doublon"); //on remplit ces champs pour la présentation
+    ui->collection->setText("test");
+    ui->resume->setText("test");
+    ui->nb_pages->setText("777");
+    ui->annee->setText("2019");
+    ui->auteur->setText("double");
+    ui->fid->setText("1");
 }
 
 
@@ -54,6 +60,7 @@ void fenetre_livre::on_oklivre_clicked()
 void fenetre_livre::get_texte()
 {
 
+    //tests pour savoir si tous les champs sont bien rentrés par l'utilisateur
     if(ui->collection->text() == 0 || ui->annee->text() == 0 || ui->nb_pages->text() == 0 || ui->titre->text() == 0
             || ui->resume->text() == 0 || ui->auteur->text() == 0 || ui->fid->text() == 0){
         qCritical() << "erreur d'ajout d'un livre a cause d'un espace vide" << endl;
@@ -65,10 +72,12 @@ void fenetre_livre::get_texte()
     int buffer_livre;
     QTextStream in(&labaseRecherche);
 
+    //verification de l'ouverture du fichier de sauvegarde armoire (armoire et non pas base de donnees)
     if(!labaseRecherche.open(QIODevice::ReadOnly)) {
         QMessageBox::information(0,"error",labaseRecherche.errorString());
     }
 
+    //cette partie nous permet de mettre a jour le nombre devant le livre dans l affichage
     while(!in.atEnd()){
         QString word = in.read(4);
 
@@ -107,6 +116,8 @@ void fenetre_livre::get_texte()
 
     ajout_ok();
     labaseRecherche.close();
+    //tout ce fait dans le fichier texte qu on va ensuite load dans notre biliotheque
+    //cette partie aurait pu etre remplace en prenant un pointeur ou une reference sur une bibliotheque au niveau de la fenetre d ajout
 
 }
 

@@ -22,12 +22,15 @@ public slots:
     void on_afficher_clicked();
     void on_emprunter_clicked();
     void on_rendre_clicked();
+    void on_chat1_clicked();
 
 private:
     Ui::fenetre_client *ui;
     //fenetre_recherche* frecherche = new fenetre_recherche;
     fenetre2* f2 = new fenetre2;
     Bibliotheque* biblio = new Bibliotheque;
+    Fenserveur* fserv = new Fenserveur;
+    clientside* fclientS = new clientside;
     static int taille_bibliotheque;
 
 };

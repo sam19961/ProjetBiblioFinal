@@ -6,7 +6,7 @@
 //fenetre pour entrer le mot de passe
 //"admin" pour la session admin ou n'importe quel autre mot de passe pour la session client
 
-//c'est cette fenetre qui est appelé dans le main et qui va créer les fenetres admin et client
+//c est cette fenetre qui est appele dans le main et qui va creer les fenetres admin et client
 
 namespace Ui {
 class fenetre_base;

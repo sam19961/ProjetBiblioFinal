@@ -9,7 +9,7 @@ fenetre_revue::fenetre_revue(QWidget *parent) :
 {
     ui->setupUi(this);    
     QObject::connect(ui->ok, SIGNAL(clicked()), this, SLOT(close()));
-    ui->titre->setText("Le Monde");
+    ui->titre->setText("Le Monde"); //on remplit ces champs pour la présentation
     ui->collection->setText("Niels");
     ui->resume->setText("Un journal");
     ui->nb_page->setText("230");

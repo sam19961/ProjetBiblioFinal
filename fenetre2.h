@@ -3,7 +3,7 @@
 
 #include <QDialog>
 #include "fenetreressource.h"
-//fenetre d'affichage du QTextEdit (lorsqu'on appuie sur le bouton afficher)
+//fenetre2 est la fenetre d affichage du QTextEdit (lorsqu on appuie sur le bouton afficher)
 namespace Ui {
 class fenetre2;
 }

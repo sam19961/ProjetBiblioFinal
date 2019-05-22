@@ -13,9 +13,8 @@ fenetre2::fenetre2(Bibliotheque *bibliotheque, QWidget *parent) :
     ui(new Ui::fenetre2)
 {
     ui->setupUi(this);
-    QString buffer;
-    QFile labase(SAUVEGARDE);
-    buffer = bibliotheque->information_armoire();
+    QString buffer;    
+    buffer = bibliotheque->information_armoire(); //renvoie un QString avec tout ce qui est dans l'armoire de notre bibliothèque
     ui->textEdit->setReadOnly(1);
     ui->textEdit->setText(buffer);   
 }

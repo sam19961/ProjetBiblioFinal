@@ -17,25 +17,18 @@
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="1" column="0">
      <layout class="QGridLayout" name="gridLayout">
-      <item row="4" column="0">
-       <widget class="QPushButton" name="save1">
-        <property name="text">
-         <string>Sauvegarde</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="0">
-       <widget class="QPushButton" name="recherche">
-        <property name="text">
-         <string>Recherche</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="retirer">
-        <property name="text">
-         <string>Retirer</string>
-        </property>
+      <item row="6" column="1">
+       <widget class="QComboBox" name="tri_choix">
+        <item>
+         <property name="text">
+          <string>auteur</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>id</string>
+         </property>
+        </item>
        </widget>
       </item>
       <item row="2" column="1">
@@ -67,10 +60,10 @@
         </item>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="afficher">
+      <item row="5" column="0">
+       <widget class="QPushButton" name="loading">
         <property name="text">
-         <string>Afficher</string>
+         <string>Load</string>
         </property>
        </widget>
       </item>
@@ -80,44 +73,6 @@
          <string/>
         </property>
        </widget>
-      </item>
-      <item row="6" column="1">
-       <widget class="QComboBox" name="tri_choix">
-        <item>
-         <property name="text">
-          <string>auteur</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>id</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="6" column="0">
-       <widget class="QPushButton" name="tri">
-        <property name="text">
-         <string>Tri</string>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="1">
-       <widget class="QPushButton" name="quitter">
-        <property name="text">
-         <string>quitter</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QPushButton" name="loading">
-        <property name="text">
-         <string>Load</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QSpinBox" name="numero_retirer"/>
       </item>
       <item row="1" column="1">
        <widget class="QLCDNumber" name="lcdNombre">
@@ -309,17 +264,24 @@
         </property>
        </widget>
       </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="save1">
+        <property name="text">
+         <string>Sauvegarde</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="retirer">
+        <property name="text">
+         <string>Retirer</string>
+        </property>
+       </widget>
+      </item>
       <item row="8" column="0">
        <widget class="QPushButton" name="chat_utilisateur">
         <property name="text">
          <string>Chat</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QPushButton" name="ajouter">
-        <property name="text">
-         <string>Ajouter</string>
         </property>
        </widget>
       </item>
@@ -330,10 +292,55 @@
         </property>
        </widget>
       </item>
-      <item row="9" column="0">
+      <item row="10" column="0">
        <widget class="QLabel" name="Date_heure">
         <property name="text">
          <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QPushButton" name="recherche">
+        <property name="text">
+         <string>Recherche</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="QPushButton" name="quitter">
+        <property name="text">
+         <string>quitter</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QSpinBox" name="numero_retirer"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="ajouter">
+        <property name="text">
+         <string>Ajouter</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="afficher">
+        <property name="text">
+         <string>Afficher</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QPushButton" name="tri">
+        <property name="text">
+         <string>Tri</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0">
+       <widget class="QPushButton" name="server1">
+        <property name="text">
+         <string>Serveur</string>
         </property>
        </widget>
       </item>

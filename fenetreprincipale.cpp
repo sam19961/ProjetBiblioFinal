@@ -33,8 +33,7 @@ FenetrePrincipale::FenetrePrincipale(Bibliotheque *bibliotheque, QWidget *parent
     //initialisation de la biblotheque de la fenetre, de la taille de la bibliotheque et sauvegarde dans le fichier
     //sauvegardeArmoire.txt
     biblio->egale(*bibliotheque);
-    taille_bibliotheque = biblio->taille_biblio();
-    qDebug() << taille_bibliotheque << endl;
+    taille_bibliotheque = biblio->taille_biblio();    
     ui->lcdNombre->display(taille_bibliotheque);
     ui->numero_retirer->setMinimum(1);
     ui->numero_retirer->setMaximum(taille_bibliotheque);
@@ -46,14 +45,15 @@ FenetrePrincipale::FenetrePrincipale(Bibliotheque *bibliotheque, QWidget *parent
 
 FenetrePrincipale::~FenetrePrincipale()
 {
-    delete ui;    
-    //delete frecherche;
+    delete ui;        
     delete flivre;
     delete frevue;
     delete fdvd;
     delete fvideo;
     delete fressource;
     delete biblio;
+    delete fserv;
+    delete fclientS;
 }
 
 
@@ -69,14 +69,12 @@ void FenetrePrincipale::on_afficher_clicked()
     int nb_exemple = biblio->doublon();
     --nb_exemple;
     while(nb_exemple > 0){
-        biblio->doublon();
+        biblio->doublon(); //evite de mettre un doublon dans notre bibliotheque
         --nb_exemple;
-    }
-    //biblio->affichage();
+    }    
     biblio->sauvegarde(&labaseRecherche);
     fenetre2* f2 = new fenetre2(biblio);
-    taille_bibliotheque = biblio->taille_biblio();
-    qDebug() << taille_bibliotheque << endl;
+    taille_bibliotheque = biblio->taille_biblio();   
     ui->numero_retirer->setMaximum(taille_bibliotheque);
     ui->lcdNombre->display(taille_bibliotheque);
     f2->show();    
@@ -104,7 +102,7 @@ void FenetrePrincipale::on_ajouter_clicked()
 
 void FenetrePrincipale::on_retirer_clicked()
 {
-    biblio->deleteId(ui->numero_retirer->value());
+    biblio->deleteId(ui->numero_retirer->value()); //retire l element en fonction de sa place et pas de son id
     ui->numero_retirer->setMaximum(biblio->taille_biblio());
     QFile labase(SAUVEGARDE);
     QFile *biblio_buffer;
@@ -122,8 +120,7 @@ void FenetrePrincipale::on_recherche_clicked()
 void FenetrePrincipale::on_loading_clicked()
 {
     QFile exemple_fichier("../../../../bibliotheque1/loadFichier.txt");
-    biblio->load(&exemple_fichier);
-    biblio->affichage();
+    biblio->load(&exemple_fichier);    
     QString command("open ../../../../bibliotheque1/loadFichier.txt");
     system(qPrintable(command));
 }
@@ -175,6 +172,11 @@ void FenetrePrincipale::on_afficher_load_clicked()
 }
 
 void FenetrePrincipale::on_chat_utilisateur_clicked()
-{
+{    
+    fclientS->show();
+}
 
+void FenetrePrincipale::on_server1_clicked()
+{
+    fserv->show();
 }
